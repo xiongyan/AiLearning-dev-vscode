@@ -105,8 +105,8 @@ def get_training_data_set():
     获得训练数据集
     原文为60000的数据集，但训练速度过于缓慢，这里
     '''
-    image_loader = ImageLoader('./data/train-images-idx3-ubyte', 60000)
-    label_loader = LabelLoader('./data/train-labels-idx1-ubyte', 60000)
+    image_loader = ImageLoader('src/py3.x/dl/data/train-images.idx3-ubyte', 60000)
+    label_loader = LabelLoader('src/py3.x/dl/data/train-labels.idx1-ubyte', 60000)
     return image_loader.load(), label_loader.load()
 
 
@@ -114,8 +114,10 @@ def get_test_data_set():
     '''
     获得测试数据集
     '''
-    image_loader = ImageLoader('t10k-images-idx3-ubyte', 10000)
-    label_loader = LabelLoader('t10k-labels-idx1-ubyte', 10000)
+    import os
+    print(os.listdir("."))
+    image_loader = ImageLoader('src/py3.x/dl/data/t10k-images.idx3-ubyte', 10000)
+    label_loader = LabelLoader('src/py3.x/dl/data/t10k-labels.idx1-ubyte', 10000)
     return image_loader.load(), label_loader.load()
 
 
