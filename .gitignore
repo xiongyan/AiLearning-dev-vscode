@@ -2,3 +2,5 @@
 .DS_Store
 .travis.yml
 .vscode
+*.pyc
+*.db
